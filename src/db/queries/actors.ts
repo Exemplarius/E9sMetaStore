@@ -67,16 +67,17 @@ export const getActorById = async (actorId: string): Promise<Actor | null> => {
  * Create a new actor
  */
 export const createActor = async (actorData: CreateActorDto): Promise<Actor> => {
-  const { name, description, author, version = 1.0, status = 'development', tags = [], risk_profile } = actorData;
+  const { actor_id, name, description, author, version = 1.0, status = 'development', tags = [], risk_profile } = actorData;
   
   const query = `
     INSERT INTO actors 
-    (name, description, author, version, status, tags, risk_profile) 
-    VALUES ($1, $2, $3, $4, $5, $6, $7) 
+    (actor_id, name, description, author, version, status, tags, risk_profile) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) 
     RETURNING *
   `;
   
   const values = [
+    actor_id,
     name,
     description,
     author,

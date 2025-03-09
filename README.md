@@ -47,9 +47,13 @@ E9sMetaStore is a comprehensive management system for trading actors, their para
 
 5. Run the database migrations:
    ```
-   psql -U your_postgres_user -d e9s_metastore -f src/db/migrations/001_init.sql
+    psql -U your_postgres_user -d e9s_metastore -f src/db/migrations/001_init.sql
    ```
-
+   
+   example
+   ```
+   psql postgres://user:pass@localhost:5432/e9s_metastore -f src/db/migrations/001_init.sql
+   ```
 6. Build the TypeScript code:
    ```
    npm run build

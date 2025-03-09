@@ -20,6 +20,7 @@ export interface RiskProfile {
   }
   
   export interface CreateActorDto {
+    actor_id: string;
     name: string;
     description: string;
     author: string;

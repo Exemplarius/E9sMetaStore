@@ -2,3 +2,10 @@
 {"level":"error","message":"Database connection failed: database \"e9s_metastore\" does not exist","timestamp":"2025-03-09T13:18:52.834Z"}
 {"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-09T13:23:14.760Z"}
 {"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-09T13:23:14.765Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-09T16:32:43.068Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-09T16:32:43.073Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-09T16:52:39.476Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-09T16:52:39.481Z"}
+{"level":"error","message":"error: bind message supplies 7 parameters, but prepared statement \"\" requires 8","timestamp":"2025-03-09T16:52:41.654Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-09T16:53:36.717Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-09T16:53:36.724Z"}

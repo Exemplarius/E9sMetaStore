@@ -6,9 +6,12 @@ CREATE TYPE actor_status AS ENUM ('active', 'archived', 'development');
 CREATE TYPE live_trade_status AS ENUM ('active', 'paused', 'stopped');
 CREATE TYPE timeframe AS ENUM ('1m', '5m', '15m', '30m', '1h', '4h', 'daily', 'weekly', 'monthly');
 
+-- Current actor id type: actor_id VARCHAR(50)
+
+
 -- Actors table
 CREATE TABLE actors (
-  actor_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  actor_id VARCHAR(50) PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
   description VARCHAR(500) NOT NULL,
   author VARCHAR(100) NOT NULL,
@@ -28,7 +31,7 @@ CREATE INDEX idx_actors_tags ON actors USING GIN(tags);
 -- Parameters table
 CREATE TABLE parameters (
   parameter_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  actor_id UUID NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
+  actor_id VARCHAR(50) NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
   name VARCHAR(100) NOT NULL,
   parameters JSONB NOT NULL,
   is_default BOOLEAN NOT NULL DEFAULT FALSE,
@@ -43,7 +46,7 @@ CREATE INDEX idx_parameters_actor_default ON parameters(actor_id, is_default);
 -- Backtest results table
 CREATE TABLE backtest_results (
   backtest_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  actor_id UUID NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
+  actor_id VARCHAR(50) NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
   parameter_id UUID NOT NULL REFERENCES parameters(parameter_id) ON DELETE CASCADE,
   timeframe timeframe NOT NULL,
   market VARCHAR(50) NOT NULL,
@@ -65,7 +68,7 @@ CREATE INDEX idx_backtest_results_market ON backtest_results(market);
 -- Live trading table
 CREATE TABLE live_trades (
   live_trade_id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  actor_id UUID NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
+  actor_id VARCHAR(50) NOT NULL REFERENCES actors(actor_id) ON DELETE CASCADE,
   parameter_id UUID NOT NULL REFERENCES parameters(parameter_id) ON DELETE CASCADE,
   status live_trade_status NOT NULL DEFAULT 'stopped',
   exchange VARCHAR(100) NOT NULL,
