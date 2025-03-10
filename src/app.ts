@@ -6,6 +6,7 @@ import { errorHandler } from '@/middleware/errorHandler';
 
 // Import routes
 import actorRoutes from '@/routes/actorRoutes';
+import actorConfigRoutes from '@/routes/actorConfigRoutes';
 //import parameterRoutes from '@/routes/parameterRoutes';
 //import backtestRoutes from '@/routes/backtestRoutes';
 //import liveTradeRoutes from '@/routes/liveTradeRoutes';
@@ -20,7 +21,8 @@ app.use(cors());
 app.use(morgan('dev'));
 
 // Routes
-app.use('/api/actors', actorRoutes);
+app.use('/api/actor', actorRoutes);
+app.use('/api/actor-config', actorConfigRoutes);
 //app.use('/api/parameters', parameterRoutes);
 //app.use('/api/backtests', backtestRoutes);
 //app.use('/api/live-trades', liveTradeRoutes);

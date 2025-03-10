@@ -20,7 +20,7 @@ export interface Statistics {
 export interface LiveTrade {
   live_trade_id: string;
   actor_id: string;
-  parameter_id: string;
+  actor_config_id: string;
   status: LiveTradeStatus;
   exchange: string;
   account: string;
@@ -32,7 +32,7 @@ export interface LiveTrade {
 
 export interface CreateLiveTradeDto {
   actor_id: string;
-  parameter_id: string;
+  actor_config_id: string;
   status?: LiveTradeStatus;
   exchange: string;
   account: string;
@@ -48,7 +48,7 @@ export interface UpdateLiveTradeDto {
 
 export interface LiveTradeFilters {
   actor_id?: string;
-  parameter_id?: string;
+  actor_config_id?: string;
   status?: LiveTradeStatus;
   exchange?: string;
   account?: string;

@@ -9,7 +9,7 @@ export const getActors = async (filters: ActorFilters): Promise<{ actors: Actor[
   const { status, tag, author, page = 1, limit = 10 } = filters;
   
   let query = `
-    SELECT * FROM actors 
+    SELECT * FROM actor 
     WHERE 1=1
   `;
   
@@ -57,7 +57,7 @@ export const getActors = async (filters: ActorFilters): Promise<{ actors: Actor[
  * Get a single actor by ID
  */
 export const getActorById = async (actorId: string): Promise<Actor | null> => {
-  const query = 'SELECT * FROM actors WHERE actor_id = $1';
+  const query = 'SELECT * FROM actor WHERE actor_id = $1';
   const result = await pool.query(query, [actorId]);
   
   return result.rows.length ? result.rows[0] : null;
@@ -70,7 +70,7 @@ export const createActor = async (actorData: CreateActorDto): Promise<Actor> => 
   const { actor_id, name, description, author, version = 1.0, status = 'development', tags = [], risk_profile } = actorData;
   
   const query = `
-    INSERT INTO actors 
+    INSERT INTO actor 
     (actor_id, name, description, author, version, status, tags, risk_profile) 
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8) 
     RETURNING *
@@ -150,7 +150,7 @@ export const updateActor = async (actorId: string, actorData: UpdateActorDto): P
   values.push(actorId);
   
   const query = `
-    UPDATE actors 
+    UPDATE actor 
     SET ${updates.join(', ')} 
     WHERE actor_id = $${paramCount} 
     RETURNING *
@@ -164,7 +164,7 @@ export const updateActor = async (actorId: string, actorData: UpdateActorDto): P
  * Delete an actor
  */
 export const deleteActor = async (actorId: string): Promise<boolean> => {
-  const query = 'DELETE FROM actors WHERE actor_id = $1 RETURNING *';
+  const query = 'DELETE FROM actor WHERE actor_id = $1 RETURNING *';
   const result = await pool.query(query, [actorId]);
   const deletedCount = result.rowCount;
   return !!deletedCount && deletedCount > 0;

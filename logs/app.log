@@ -9,3 +9,13 @@
 {"level":"error","message":"error: bind message supplies 7 parameters, but prepared statement \"\" requires 8","timestamp":"2025-03-09T16:52:41.654Z"}
 {"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-09T16:53:36.717Z"}
 {"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-09T16:53:36.724Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-10T15:58:25.046Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-10T15:58:25.052Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-10T16:02:20.508Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-10T16:02:20.512Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-10T16:02:26.119Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-10T16:02:26.124Z"}
+{"level":"error","message":"Error creating actor config: error: relation \"actor_config\" does not exist","timestamp":"2025-03-10T16:02:28.224Z"}
+{"level":"error","message":"error: relation \"actor_config\" does not exist","timestamp":"2025-03-10T16:02:28.225Z"}
+{"level":"info","message":"PostgreSQL connected successfully","timestamp":"2025-03-10T16:04:29.220Z"}
+{"level":"info","message":"E9sMetaStore server running in development mode on port 5000","timestamp":"2025-03-10T16:04:29.225Z"}

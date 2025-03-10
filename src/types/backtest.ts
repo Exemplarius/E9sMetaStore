@@ -22,7 +22,7 @@ export interface Performance {
 export interface BacktestResult {
   backtest_id: string;
   actor_id: string;
-  parameter_id: string;
+  actor_config_id: string;
   timeframe: TimeFrame;
   market: string;
   symbols: string[];
@@ -36,7 +36,7 @@ export interface BacktestResult {
 
 export interface CreateBacktestResultDto {
   actor_id: string;
-  parameter_id: string;
+  actor_config_id: string;
   timeframe: TimeFrame;
   market: string;
   symbols: string[];
@@ -49,7 +49,7 @@ export interface CreateBacktestResultDto {
 
 export interface BacktestFilters {
   actor_id?: string;
-  parameter_id?: string;
+  actor_config_id?: string;
   timeframe?: TimeFrame;
   market?: string;
   executed_after?: Date | string;

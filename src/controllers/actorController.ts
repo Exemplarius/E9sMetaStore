@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { getActors, getActorById, createActor, updateActor, deleteActor } from '@/db/queries/actors';
+import { getActors, getActorById, createActor, updateActor, deleteActor } from '@/db/queries/actor';
 import { ApiError } from '@/middleware/errorHandler';
 import { ActorFilters } from '@/types/actor';
 

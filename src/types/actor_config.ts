@@ -1,27 +1,27 @@
-export interface Parameter {
-    parameter_id: string;
+export interface ActorConfig {
+    actor_config_id: string;
     actor_id: string;
     name: string;
-    parameters: Record<string, any>;
+    config_data: Record<string, any>;
     is_default: boolean;
     created_at: Date;
     updated_at: Date;
   }
   
-  export interface CreateParameterDto {
+  export interface CreateActorConfigDto {
     actor_id: string;
     name: string;
-    parameters: Record<string, any>;
+    config_data: Record<string, any>;
     is_default?: boolean;
   }
   
-  export interface UpdateParameterDto {
+  export interface UpdateActorConfigDto {
     name?: string;
-    parameters?: Record<string, any>;
+    config_data?: Record<string, any>;
     is_default?: boolean;
   }
   
-  export interface ParameterFilters {
+  export interface ActorConfigFilters {
     actor_id?: string;
     is_default?: boolean;
     page?: number;
